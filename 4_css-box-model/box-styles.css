@@ -1,0 +1,142 @@
+/*
+resetting styles
+
+It’s usually a good idea to override default styles to a predictable value using the “universal” CSS selector (*). Try adding this to the top of our box-styles.css file
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, p {
+    background-color: #DDE0E3;
+}
+
+em, strong {
+    background-color: #B2D6FF;
+    display: inline;
+}
+
+h1 {
+    padding: 50px;
+}
+
+p {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+p {
+    padding: 20px 10px; /* Vertical  Horizontal */
+}
+
+p {
+    padding: 20px 0 20px 10px; /* Top  Right  Bottom  Left */
+}
+
+h1 {
+    padding: 50px;
+    /* border: 1px solid #5D6063; */ /* Size Style Color */
+    border-bottom: 1px solid #5D6063; /* Size Style Color */
+}
+
+p {
+    padding: 20px 0 20px 10px; /* Top  Right  Bottom  Left */
+    margin-bottom: 50px;
+}
+
+/*
+The most common reasons why you would pick one over the other are:
+
+-The padding of a box has a background, while margins are always transparent.
+-Padding is included in the click area of an element, while margins aren’t.
+-Margins collapse vertically, while padding doesn’t (we’ll discuss this more in the next section).
+*/
+
+/*
+Inline boxes completely ignore the top and bottom margins of an element
+*/
+
+/*
+The horizontal margins display just like we’d expect,
+but this doesn’t alter the vertical space around our <strong>element one bit.
+*/
+strong {
+    margin: 50px;
+}
+
+/*
+Padding will display the blue background; however, it won’t affect the vertical layout of the surrounding boxes
+*/
+em {
+    padding: 50px;
+}
+
+/*
+When you have two boxes with vertical margins sitting right next to each other,
+they will collapse. Instead of adding the margins together like you might expect,
+only the biggest one is displayed.
+*/
+
+p {
+    padding: 20px 0 20px 10px;
+
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+/*
+Both <div>and <span>are container elements that don’t have any affect on the semantic structure of an HTML document.
+
+The only real difference between a <div>and a <span>is that the former is for block-level content while the latter is meant for inline content.
+*/
+
+div {
+    color: #FFF;
+    background-color: #5995DA;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #5D6063;
+    border-radius: 5px;
+}
+
+
+/*
+The element will expand vertically to accommodate the new content.
+
+You can change this default behavior with the white-space and overflow properties.
+*/
+div {
+    width: 200px;
+}
+
+/*
+The width and height properties only define the size of a box’s content. Its padding and border are both added on top of whatever explicit dimensions you set.
+*/
+div {
+    box-sizing: border-box;
+    /*
+    default content-box
+
+    This forces the actual width of the box to be 200px—including padding and borders.
+    */
+}
+
+/*
+There are three methods for horizontally aligning block-level elements:
+auto-margins for center alignment,
+floats for left/right alignment,
+and flexbox for complete control over alignment.
+*/
+
+/*
+Note that this only works on blocks that have an explicit width defined on them
+*/
+div {
+    margin: 20px auto; /* Vertical Horizontal */
+}
+
